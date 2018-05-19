@@ -42,10 +42,23 @@ class App extends Component{
         //         <CardList robots={filteredRobots}/>
         //     </div>
         // );
-        if(this.state.robots.length === 0) {
-            return <h1>Loading</h1>
-        }else {
-            return (
+        // if(this.state.robots.length === 0) {
+        //     return <h1>Loading</h1>
+        // }else {
+        //     return (
+        //         <div className='tc'>
+        //             <h1 className='f2'>RobotFriends</h1>
+        //             <SearchBox search_change={this.onSearchChange}/>
+        //             <Scroll>
+        //                 <CardList robots={filteredRobots}/>
+        //             </Scroll>
+        //         </div>
+        //     );
+        // }
+        return this.state.robots.length === 0 ?
+            <h1>Loading</h1>
+            :
+            (
                 <div className='tc'>
                     <h1 className='f2'>RobotFriends</h1>
                     <SearchBox search_change={this.onSearchChange}/>
@@ -53,8 +66,7 @@ class App extends Component{
                         <CardList robots={filteredRobots}/>
                     </Scroll>
                 </div>
-            );
-        }
+            )
     }
 }
 
